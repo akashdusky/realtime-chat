@@ -6,7 +6,7 @@ var cors = require('cors')
 
 
 
-const app = express();
+const app = express();  
 app.use(cors())
 const server = app.listen(process.env.PORT || 5000 ,  ()=>{console.log("started or 5000")})
 
@@ -62,3 +62,7 @@ socket.on('disconnect', ()=>{
 })
 // listen for vents
 
+
+
+
+// heroku config:set -a creakchat CORSANYWHERE_RATELIMIT="60 1"
