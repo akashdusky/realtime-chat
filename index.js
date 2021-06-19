@@ -4,7 +4,7 @@ const socket = require('socket.io')
 // app setup
 
 const app = express();
-const server = app.listen(2001 ,  ()=>{console.log("listening on port : 2001")})
+const server = app.listen(process.env.PORT || 5000 ,  ()=>{console.log("started or 500")})
 
 
 app.get('/crad', (req , res)=> {
