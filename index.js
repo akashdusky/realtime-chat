@@ -1,11 +1,13 @@
 const express = require('express')
 const socket = require('socket.io')
+var express = require('express')
 
 // app setup
 
 
 
 const app = express();
+app.use(cors())
 const server = app.listen(process.env.PORT || 5000 ,  ()=>{console.log("started or 5000")})
 
 
