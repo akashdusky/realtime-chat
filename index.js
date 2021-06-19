@@ -1,13 +1,15 @@
 const express = require('express')
 const socket = require('socket.io')
-
+var cors = require('cors')
 
 // app setup
 
 
 
 const app = express();  
-
+app.use(cors({
+    origin : "*",
+}))
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
@@ -15,7 +17,7 @@ app.use(function(req, res, next) {
     return next();
   });
 console.log("cor enables ...")
-
+console.log(cors)
 
 const server = app.listen(process.env.PORT || 5000 ,  ()=>{console.log("started or 5000")})
 
@@ -33,12 +35,9 @@ app.use(express.static('public'));
 
 //socket setup
 
-
 const io = socket(server);
 
-
 io.on('connection' , (socket)=>{
-    io.set('transports', [ 'websocket' ]);
     console.log('handshake done '  ,socket.id,)
     usercount ++
     io.sockets.emit('newconnection' , (usercount + " active users"))
