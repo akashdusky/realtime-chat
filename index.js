@@ -35,9 +35,10 @@ app.use(express.static('public'));
 
 
 const io = socket(server);
-io.set('transports', [ 'websocket' ]);
+
 
 io.on('connection' , (socket)=>{
+    io.set('transports', [ 'websocket' ]);
     console.log('handshake done '  ,socket.id,)
     usercount ++
     io.sockets.emit('newconnection' , (usercount + " active users"))
