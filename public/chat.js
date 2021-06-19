@@ -2,7 +2,7 @@
 
 
 
-const socket = io.connect('http://localhost:2001/')
+const socket = io.connect('https://creakchat.herokuapp.com/')
 
 
 //Query dom
