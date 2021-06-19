@@ -8,8 +8,11 @@ var cors = require('cors')
 
 const app = express();  
 app.use(cors({
-    origin : "https://creakchat.web.app/",
+    origin : "*",
 }))
+console.log("cor enables ...")
+console.log(cors)
+
 const server = app.listen(process.env.PORT || 5000 ,  ()=>{console.log("started or 5000")})
 
 
