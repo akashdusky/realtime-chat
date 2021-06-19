@@ -7,7 +7,9 @@ var cors = require('cors')
 
 
 const app = express();  
-app.use(cors())
+app.use(cors({
+    origin : "https://creakchat.web.app/",
+}))
 const server = app.listen(process.env.PORT || 5000 ,  ()=>{console.log("started or 5000")})
 
 
