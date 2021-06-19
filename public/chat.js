@@ -1,8 +1,8 @@
 // make Connnection
 
-import {io} from 'socket.io-client'
 
-const socket = io.connect('http://192.168.0.131:2001/')
+
+const socket = io.connect('http://localhost:2001/')
 
 
 //Query dom
